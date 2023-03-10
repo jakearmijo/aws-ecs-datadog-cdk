@@ -26,6 +26,7 @@ AwsEcsDatadogCdkStack(app, "AwsEcsDatadogCdkStack",
     env=cdk.Environment(account=os.getenv('AWS_ACCOUNT_ID'), region='us-east-2'),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
+    description="Cluster with 2 containers. Datadog agent runs as Daemon gives metrics to DD"
     )
 
 app.synth()
