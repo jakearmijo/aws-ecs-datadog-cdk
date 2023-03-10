@@ -12,12 +12,13 @@ from dotenv.main import load_dotenv
 
 load_dotenv()
 
+
 class AwsEcsDatadogCdkStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        role = iam.Role.from_role_arn(self, "Role", os.getenv['IAM_ROLE_ARN'],
+        role = iam.Role.from_role_arn(self, "Role", os.getenv('IAM_ROLE_ARN'),
             mutable=False
         )
 
@@ -57,7 +58,7 @@ class AwsEcsDatadogCdkStack(Stack):
                 timeout=Duration.seconds(5)
             ),
         )
-        data_dog_agent_container.add_environment('DD_API_KEY',os.getenv('DD_API_KEY'))
+        data_dog_agent_container.add_environment('DD_API_KEY', os.getenv('DD_API_KEY'))
         data_dog_agent_container.add_environment('DD_PROCESS_AGENT_ENABLED','true')
         data_dog_agent_container.add_environment('DD_SITE','datadoghq.com')
 
