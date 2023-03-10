@@ -17,7 +17,7 @@ class AwsEcsDatadogCdkStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        role = iam.Role.from_role_arn(self, "Role", "arn:aws:iam::955785507024:role/ecsTaskExecutionRole",
+        role = iam.Role.from_role_arn(self, "Role", os.getenv['IAM_ROLE_ARN'],
             mutable=False
         )
 
@@ -90,9 +90,9 @@ class AwsEcsDatadogCdkStack(Stack):
         ))
 
         # If you have an existing security group you want to use in your CDK application, you would import it like this:
-        existing_security_group = ec2.SecurityGroup.from_security_group_id(self, "SG", "sg-12345",
-            mutable=False
-        )
+        # existing_security_group = ec2.SecurityGroup.from_security_group_id(self, "SG", "sg-12345",
+        #     mutable=False
+        # )
 
         # exisiting_cluster = ecs.Cluster.from_cluster_arn(self,id="enter_id_for_cluster", cluster_arn="12345678")
         # exisiting_cluster_with_attributes = ecs.Cluster.from_cluster_attributes(
