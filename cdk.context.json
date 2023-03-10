@@ -1,0 +1,45 @@
+{
+  "vpc-provider:account=955785507024:filter.tag:Name=datadog-eval-1:region=us-east-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-02b0569e9456b8fea",
+    "vpcCidrBlock": "172.30.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0f5417092ab0229c7",
+            "cidr": "172.30.10.0/24",
+            "availabilityZone": "us-east-2a",
+            "routeTableId": "rtb-0cd1b398e57ba7491"
+          },
+          {
+            "subnetId": "subnet-070abdb981cdb44b4",
+            "cidr": "172.30.12.0/24",
+            "availabilityZone": "us-east-2b",
+            "routeTableId": "rtb-0cd1b398e57ba7491"
+          }
+        ]
+      },
+      {
+        "name": "Private",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-007b87fa94ece14d1",
+            "cidr": "172.30.20.0/24",
+            "availabilityZone": "us-east-2a",
+            "routeTableId": "rtb-0fc73c6f42d7c1456"
+          },
+          {
+            "subnetId": "subnet-0991c2bb3a59760e6",
+            "cidr": "172.30.22.0/24",
+            "availabilityZone": "us-east-2b",
+            "routeTableId": "rtb-060f670766cdc2a47"
+          }
+        ]
+      }
+    ]
+  }
+}
